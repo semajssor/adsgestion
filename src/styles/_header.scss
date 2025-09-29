@@ -1,0 +1,175 @@
+@import '_variables';
+
+.main-header {
+   background-color: $color-text-primary;
+   color: $color-bg-light;
+   padding: 1rem 0;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+
+   .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: $breakpoint-desktop;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+   }
+
+   .logo {
+      display: flex;
+         align-items: center;
+      
+         img {
+            max-height: 70px;
+            width: auto;
+         }
+      }
+}
+
+/* ---------------------------------- */
+/* NAVIGATION DESKTOP & RESPONSIVE */
+/* ---------------------------------- */
+
+.main-nav {
+   display: none;
+
+   @media (min-width: $breakpoint-tablet) {
+      display: block;
+
+      .nav-list {
+         display: flex;
+         list-style: none;
+         padding: 0;
+         margin: 0;
+
+         li a {
+            color: $color-bg-light;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+
+            &:hover {
+               color: $color-accent;
+            }
+         }
+      }
+   }
+}
+
+/* ---------------------------------- */
+/* MENU HAMBURGER (Mobile) */
+/* ---------------------------------- */
+
+.menu-toggle {
+   display: block;
+   background: none;
+   border: none;
+   cursor: pointer;
+   padding: 10px;
+   z-index: 1000;
+
+   @media (min-width: $breakpoint-tablet) {
+      display: none;
+   }
+
+   .hamburger-icon {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: $color-bg-light;
+      position: relative;
+      transition: transform 0.3s;
+
+      &::before,
+      &::after {
+         content: '';
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background: $color-bg-light;
+         transition: transform 0.3s, top 0.3s;
+      }
+
+      &::before {
+         top: -8px;
+      }
+
+      &::after {
+         top: 8px;
+      }
+   }
+
+   // Animation de l'icône X
+   &.is-open .hamburger-icon {
+      background: transparent;
+
+      &::before {
+         transform: rotate(45deg);
+         top: 0;
+      }
+
+      &::after {
+         transform: rotate(-45deg);
+         top: 0;
+      }
+   }
+}
+
+/* Menu Mobile Overlay */
+.main-nav.is-open {
+   display: flex;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100vh;// Prend tout l'écran 
+   background-color: $color-text-primary;
+   z-index: 999;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   .nav-list {
+      flex-direction: column;
+      text-align: center;
+
+      li {
+         margin: 1rem 0;
+
+         a {
+            font-size: 1.5rem;
+            padding: 1rem;
+
+            &:hover {
+               color: $color-border;
+            }
+         }
+      }
+   }
+}
+
+// Pour empêcher le défilement du corps
+body.menu-active {
+   overflow: hidden;
+}
+
+/* Bouton d'Action (Greige) */
+.cta-button {
+   background-color: $color-border;
+   color: $color-text-primary;
+   text-decoration: none;
+   padding: 0.5rem 1rem;
+   border-radius: 4px;
+   font-weight: bold;
+   transition: background-color 0.3s;
+
+   &:hover {
+      background-color: darken($color-border, 10%);
+   }
+
+   // Le bouton CTA est caché sur mobile quand le menu est fermé, mais réaffiché si le menu est ouvert ou sur desktop.
+   @media (max-width: #{ $breakpoint-tablet - 1px }) {
+      display: none; 
+   }
+}

@@ -1,0 +1,32 @@
+---
+// Footer.astro
+import "../styles/_footer.scss";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="main-footer">
+	<div class="footer-container">
+		<nav class="footer-nav">
+			<h4>Navigation</h4>
+			<ul>
+				<li><a href="/a-propos">Qui sommes-nous</a></li>
+				<li><a href="/contact">Contactez-nous</a></li>
+				<li><a href="/ressources">Ressources</a></li>
+			</ul>
+		</nav>
+
+		<div class="footer-legal">
+			<p>&copy; {currentYear} ADS | Gestion Financière. <br />
+				Tous droits réservés.</p>
+			<!-- <p><a href="/politique-confidentialite">Politique de Confidentialité</a></p> -->
+		</div>
+
+		<div class="footer-contact">
+			<h4>Contact</h4>
+			<p>
+				<a href="mailto:administration@adsfinanciere.ca">administration@adsfinanciere.ca</a>
+			</p>
+		</div>
+	</div>
+</footer>

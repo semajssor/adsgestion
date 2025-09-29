@@ -1,0 +1,57 @@
+---
+import "../styles/_header.scss";
+import { useState } from "react";
+
+const navLinks = [
+	{ title: "Accueil", href: "/" },
+	{ title: "À Propos", href: "/a-propos" },
+	{ title: "Contactez-nous", href: "/contact" },
+	{ title: "Ressources", href: "/ressources" },
+];
+---
+
+<header class="main-header">
+	<div class="header-container">
+		<a href="/" class="logo" aria-label="Accueil ADS Gestion Financière">
+			<img src="/adsgf.png" alt="Logo ADS Gestion Financière" width="150" height="auto" />
+		</a>
+
+		<nav class="main-nav">
+			<ul class="nav-list">
+				{
+					navLinks.map((link) => (
+						<li>
+							<a href={link.href} aria-label={`Aller à la page ${link.title}`}>
+								{link.title}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+
+		<a href="/contact" class="cta-button" aria-label="Contacter ADS Gestion Financière">
+			Contactez-nous
+		</a>
+
+		<button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu de navigation">
+			<span class="hamburger-icon"></span>
+		</button>
+	</div>
+</header>
+
+<script>
+	// Logique JavaScript pour le menu Hamburger
+	const toggleButton = document.getElementById("menu-toggle");
+	const nav = document.querySelector(".main-nav");
+	const body = document.body;
+
+	if (toggleButton && nav) {
+		toggleButton.addEventListener("click", () => {
+			nav.classList.toggle("is-open");
+			toggleButton.classList.toggle("is-open");
+			// Empêche le défilement du body lorsque le menu est ouvert
+			body.classList.toggle("menu-active");
+		});
+	}
+</script>

@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ContactForm from "../components/ContactForm.jsx";
+import "../styles/_contact.scss";
+
+const title = "Contactez ADS Gestion Financière";
+const description =
+	"Contactez notre petite équipe pour un service financier personnalisé, dédié aux entrepreneurs autonomes.";
+---
+
+<BaseLayout {title} {description}>
+	<main class="page-contact">
+		<section class="hero-contact">
+			<h1>Parlons de votre avenir financier.</h1>
+			<p>
+				Notre équipe est là pour vous aider à simplifier la gestion financière de votre pratique ou
+				de votre entreprise.
+			</p>
+		</section>
+
+		<section class="form-section">
+			<div class="contact-grid">
+				<div class="form-wrapper">
+					<h2>Envoyez-nous un message</h2>
+					<ContactForm client:load />
+				</div>
+
+				<div class="contact-info">
+					<h2>Informations Directes</h2>
+					<p>Si vous préférez, vous pouvez nous joindre directement :</p>
+					<p>
+						<strong>Courriel :</strong>
+						<a href="mailto:administration@adsfinanciere.ca">administration@adsfinanciere.ca</a><br />
+						<strong>Téléphone :</strong> (514) 824-8131
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+</BaseLayout>
