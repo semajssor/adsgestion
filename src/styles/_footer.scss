@@ -9,13 +9,14 @@
    border-radius: 4px;
    padding: 1rem; 
 
+
    .footer-container {
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
       justify-content: center;
-      align-items: center;
-      gap: 1rem; 
+      align-items: flex-start;
+      gap: 1rem;
       max-width: $breakpoint-desktop;
       margin: 0 auto;
    }
@@ -25,14 +26,15 @@
    .footer-contact {
       flex: 1 1 auto;
       min-width: 150px; 
+      display: flex;
+         justify-content: flex-start;
+         align-items: center;
+         flex-direction: column;
    }
 
    .footer-legal {
       font-size: 0.8rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+      
    }
 
    h4 {
@@ -47,7 +49,7 @@
       transition: color 0.3s;
 
       &:hover {
-         color: $color-border;
+         color: $color-accent;
       }
    }
 
