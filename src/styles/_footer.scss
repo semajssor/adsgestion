@@ -27,26 +27,26 @@
       flex: 1 1 auto;
       min-width: 150px; 
       display: flex;
-         justify-content: flex-start;
-         align-items: center;
-         flex-direction: column;
-   }
-
-   .footer-legal {
-      font-size: 0.8rem;
-      
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
    }
 
    h4 {
       color: $color-border;
       margin: 0.5rem 0;
-      font-size: 1rem;
+      font-size: 0.9rem;
+   }
+
+   p{
+      font-size: 0.8rem;
    }
 
    a {
       color: $color-bg-light;
       text-decoration: none;
       transition: color 0.3s;
+      font-size: 0.8rem;
 
       &:hover {
          color: $color-accent;
@@ -70,6 +70,7 @@
          flex-direction: row;
          justify-content: space-between;
          flex-wrap: nowrap;
+         font-size: 0.8rem;
       }
    }
 }
