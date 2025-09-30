@@ -1,0 +1,33 @@
+@import "_variables";
+
+.page-404 {
+   text-align: center;
+   padding: 6rem 1.5rem;
+
+   h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $color-text-primary;
+   }
+
+   p {
+      margin-bottom: 2rem;
+      color: $color-text-primary;
+      font-size: 1.1rem;
+   }
+
+   .cta-button {
+      background-color: $color-accent;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: $color-text-primary;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+         background-color: darken($color-accent, 10%);
+      }
+   }
+}
