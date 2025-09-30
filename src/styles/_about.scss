@@ -2,12 +2,13 @@
 @use 'sass:color';
 
 .about-hero {
-   text-align: center;
-   padding: 4rem 1.5rem;
    background-color: $color-bg-secondary;
+   padding: 2rem 1.5rem 3rem 1.5rem;
+   text-align: center;
+   margin: 2rem 0;
    border-radius: 4px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   margin: 2rem 0;
+   
 
    h1 {
       font-size: 1.5rem;
