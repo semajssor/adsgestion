@@ -1,9 +1,19 @@
 ---
 import "../styles/_resourceCard.scss";
 const { title, description, fileUrl } = Astro.props;
+
+const extension = fileUrl.split(".").pop()?.toLowerCase();
+
+const iconPath = `/icons/${extension}.svg`;
+const fallbackIcon = "/icons/file.svg";
+
+const fileIcon = iconPath || fallbackIcon;
 ---
 
 <a class="resource-card" href={fileUrl} download>
-	<h3>{title}</h3>
+	<div class="resource-header">
+		<h3>{title}</h3>
+		<img src={fileIcon} alt={`${extension || "file"} icon`} class="file-icon" />
+	</div>
 	{description && <p>{description}</p>}
 </a>

@@ -11,6 +11,22 @@
    color: $color-text-primary;
    transition: box-shadow 0.3s;
    margin-bottom: 1rem;
+
+   .resource-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+   
+         h3 {
+            margin: 0 0.5rem 0 0;
+         }
+   
+         .file-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+         }
+      }
 }
 
 .resource-card:hover {
@@ -24,5 +40,5 @@
 .resource-card p {
    margin: 0;
    font-size: 0.9rem;
-   color: $color-text-primary;;
+   color: $color-text-primary;
 }
