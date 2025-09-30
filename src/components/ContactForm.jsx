@@ -1,37 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import { ReCAPTCHA } from "react-google-recaptcha";
 import { navigate } from "astro/virtual-modules/transitions-router.js";
+
 function ContactForm() {
 	const [state, handleSubmit] = useForm("xpwypkvy");
-	const [captchaToken, setCaptchaToken] = useState(null);
-
-	const handleCaptchaChange = (token) => {
-		setCaptchaToken(token);
-	};
 
 	const customSubmit = async (event) => {
 		event.preventDefault();
 
-		if (!captchaToken) {
-			alert("Veuillez vérifier le reCAPTCHA avant d’envoyer.");
+		if (!window.grecaptcha) {
+			alert("reCAPTCHA non chargé. Veuillez réessayer.");
 			return;
 		}
 
-		// Attach the token manually before sending
-		const form = new FormData(event.target);
-		form.append("g-recaptcha-response", captchaToken);
+		try {
+			const token = await window.grecaptcha.execute("6LeLRNorAAAAADCICl8BN52t6AfwSnycn9849P7R", {
+				action: "submit",
+			});
 
-		await handleSubmit(form);
+			const form = new FormData(event.target);
+			form.append("g-recaptcha-response", token);
+
+			await handleSubmit(form);
+		} catch (err) {
+			console.error("Erreur lors de l'exécution du reCAPTCHA:", err);
+			alert("Impossible de valider le reCAPTCHA. Veuillez réessayer.");
+		}
 	};
 
 	if (state.succeeded) {
-		return (
-			// <p className="success-message">
-			// 	Merci! Votre message a été envoyé. Nous vous répondrons sous peu.
-			// </p>
-			navigate("/thank-you")
-		);
+		return navigate("/thank-you");
 	}
 
 	return (
@@ -61,15 +59,10 @@ function ContactForm() {
 			{/* Honeypot field */}
 			<input type="text" name="_gotcha" style={{ display: "none" }} />
 
-			{/* reCAPTCHA */}
-			<ReCAPTCHA
-				sitekey="6LeLRNorAAAAADCICl8BN52t6AfwSnycn9849P7R"
-				onChange={handleCaptchaChange}
-			/>
-
 			<button type="submit" disabled={state.submitting} className="submit-button">
 				{state.submitting ? "Envoi en cours..." : "Envoyer mon message"}
 			</button>
+
 			<ValidationError errors={state.errors} />
 		</form>
 	);
