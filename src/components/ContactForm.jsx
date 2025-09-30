@@ -8,24 +8,8 @@ function ContactForm() {
 	const customSubmit = async (event) => {
 		event.preventDefault();
 
-		if (!window.grecaptcha) {
-			alert("reCAPTCHA non chargé. Veuillez réessayer.");
-			return;
-		}
-
-		try {
-			const token = await window.grecaptcha.execute("6LeLRNorAAAAADCICl8BN52t6AfwSnycn9849P7R", {
-				action: "submit",
-			});
-
-			const form = new FormData(event.target);
-			form.append("g-recaptcha-response", token);
-
-			await handleSubmit(form);
-		} catch (err) {
-			console.error("Erreur lors de l'exécution du reCAPTCHA:", err);
-			alert("Impossible de valider le reCAPTCHA. Veuillez réessayer.");
-		}
+		const form = new FormData(event.target);
+		await handleSubmit(form);
 	};
 
 	if (state.succeeded) {
