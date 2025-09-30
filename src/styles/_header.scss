@@ -167,9 +167,19 @@ body.menu-active {
    border-radius: 4px;
    font-weight: bold;
    transition: background-color 0.3s;
+   font-size: 1rem; 
+   white-space: nowrap; 
 
    &:hover {
       background-color: $color-bg-light;
    }
 
+   @media (max-width: #{ $breakpoint-tablet - 1px }) {
+      padding: 0.4rem 0.8rem; 
+      font-size: 0.9rem; 
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1100;
+   }
 }
