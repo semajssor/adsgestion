@@ -1,6 +1,5 @@
-@import '_variables';
+@use 'variables' as *;
 
-/* Hero Section */
 .hero {
    background-color: $color-bg-secondary;
    padding: 4rem 1.5rem;

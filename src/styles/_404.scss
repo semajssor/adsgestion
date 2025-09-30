@@ -1,4 +1,4 @@
-@import "_variables";
+@use 'variables' as *;
 
 .page-404 {
    text-align: center;
@@ -18,7 +18,7 @@
    .cta-button {
       background-color: $color-accent;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      color: $color-text-primary;
+      color: _variables$color-text-primary;
       padding: 0.75rem 1.5rem;
       border-radius: 4px;
       font-weight: bold;

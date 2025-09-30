@@ -1,11 +1,11 @@
-@import '_variables';
-@import '_404';
-@import "_about";
-@import '_contact';
-@import '_footer';
-@import '_header';
-@import "_home";
-@import "_thank-you";
+@use 'variables' as *;
+@use '404' as page404;
+@use 'about';
+@use 'contact';
+@use 'footer';
+@use 'header';
+@use 'home';
+@use 'thank-you' as merci;
 
 *,
 *::before,

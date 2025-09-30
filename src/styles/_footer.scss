@@ -1,16 +1,17 @@
-@import '_variables';
+@use '_variables' as *;
 
 .main-footer {
    background-color: $color-text-primary;
    color: $color-bg-light;
-   font-size: 0.8rem;
+   font-size: 0.9rem;
    text-align: center;
    border-radius: 4px;
-   padding: 0.5rem; 
+   padding: 1rem; 
 
    .footer-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
       gap: 1rem; 
@@ -26,7 +27,7 @@
    }
 
    .footer-legal {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,6 +36,7 @@
    h4 {
       color: $color-border;
       margin-bottom: 0.5rem;
+      font-size: 1rem;
    }
 
    a {
@@ -43,7 +45,7 @@
       transition: color 0.3s;
 
       &:hover {
-         color: $color-accent;
+         color: $color-border;
       }
    }
 
