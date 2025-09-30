@@ -1,0 +1,146 @@
+@import '_variables';
+
+.about-hero {
+   text-align: center;
+   padding: 4rem 1.5rem;
+   background-color: $color-bg-secondary;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   margin: 2rem 0;
+
+   h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: $color-text-primary;
+   }
+
+   p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: $color-text-primary;
+   }
+}
+
+/* Mission Section */
+.about-mission {
+   text-align: center;
+   padding: 2rem 1.5rem;
+   background-color: $color-bg-secondary;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   margin: 2rem 0;
+
+   h2 {
+      margin-bottom: 1.5rem;
+      color: $color-text-primary;
+   }
+
+   ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+         margin-bottom: 1rem;
+         font-size: 1rem;
+
+         &:before {
+            content: "✔️ ";
+            margin-right: 0.5rem;
+            color: $color-accent;
+         }
+      }
+   }
+}
+
+/* Team / History Section */
+.about-team {
+   text-align: center;
+   padding: 2rem 1.5rem;
+   background-color: $color-bg-secondary;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   margin: 2rem 0;
+
+   h2 {
+      margin-bottom: 1rem;
+      color: $color-text-primary;
+   }
+
+   p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: $color-text-primary;
+   }
+
+   img {
+      margin-top: 2rem;
+      max-width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   }
+}
+
+/* Why Choose Us Section */
+.about-why {
+   text-align: center;
+   padding: 2rem 1.5rem;
+   background-color: $color-bg-secondary;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+   h2 {
+      margin-bottom: 2rem;
+      color: $color-text-primary;
+   }
+
+   .reasons-grid {
+      display: grid;
+      gap: 1rem;
+
+      @media (min-width: $breakpoint-tablet) {
+         grid-template-columns: repeat(3, 1fr);
+         gap: 2rem;
+      }
+
+      .reason-card {
+         padding: 1.5rem;
+         border-radius: 8px;
+         font-weight: bold;
+         color: $color-text-primary;
+      }
+   }
+}
+
+/* Call To Action Section */
+.cta-about {
+   background-color: $color-border;
+   color: $color-text-primary;
+   padding: 3rem 1.5rem;
+   text-align: center;
+   margin-bottom: 1rem;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+   margin-top: 2rem;
+
+   h2 {
+      margin-bottom: 1.5rem;
+   }
+
+   /* Context-specific CTA */
+   .cta-button {
+      background-color: $color-accent;
+      color: $color-text-primary;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+         background-color: darken($color-accent, 10%);
+      }
+   }
+}

@@ -3,33 +3,38 @@
 .main-footer {
    background-color: $color-text-primary;
    color: $color-bg-light;
-   // padding: 1rem 1rem;
    font-size: 0.9rem;
    text-align: center;
    border-radius: 4px;
+   padding: 1rem; 
 
    .footer-container {
-      display: grid;
-      gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem; 
       max-width: $breakpoint-desktop;
       margin: 0 auto;
-
-      @media (min-width: $breakpoint-tablet) {
-         grid-template-columns: 1fr 1fr 1fr;
-      }
    }
-   .footer-legal {
-      display: flex;
-      text-align: center;
-      font-size: 0.8rem;
-      align-items: center;
-      justify-content: center;
 
+   .footer-nav,
+   .footer-legal,
+   .footer-contact {
+      flex: 1 1 auto;
+      min-width: 150px; 
+   }
+
+   .footer-legal {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 
    h4 {
       color: $color-border;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
       font-size: 1rem;
    }
 
@@ -39,7 +44,7 @@
       transition: color 0.3s;
 
       &:hover {
-         color: $color-border;
+         color: $color-accent;
       }
    }
 
@@ -49,7 +54,16 @@
       margin: 0;
 
       li {
-         margin-bottom: 0.5rem;
+         margin-bottom: 0.25rem;
+      }
+   }
+
+   // On tablet/desktop: space out more
+   @media (min-width: $breakpoint-tablet) {
+      .footer-container {
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: nowrap;
       }
    }
 }

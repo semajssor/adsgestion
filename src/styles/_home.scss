@@ -1,0 +1,99 @@
+@import '_variables';
+
+/* Hero Section */
+.hero {
+   background-color: $color-bg-secondary;
+   padding: 4rem 1.5rem;
+   text-align: center;
+   margin-top: 1rem;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+   .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      h1 {
+         font-size: 2rem;
+         margin-bottom: 1rem;
+      }
+
+      p {
+         font-size: 1.1rem;
+         margin-bottom: 2rem;
+      }
+
+      /* Context-specific CTA */
+      .cta-button {
+         background-color: $color-accent;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         color: $color-text-primary;
+         padding: 0.75rem 1.5rem;
+         border-radius: 4px;
+         font-weight: bold;
+         text-decoration: none;
+         transition: background-color 0.3s;
+
+         &:hover {
+            background-color: darken($color-accent, 10%);
+         }
+      }
+   }
+}
+
+/* Services Section */
+.services {
+   padding: 4rem 1.5rem;
+   text-align: center;
+
+   h2 {
+      margin-bottom: 2rem;
+   }
+
+   .services-grid {
+      display: grid;
+      gap: 2rem;
+
+      @media (min-width: $breakpoint-tablet) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .service-card {
+         background-color: $color-bg-secondary;
+         padding: 2rem;
+         border-radius: 4px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+   }
+}
+
+/* Call To Action Section */
+.cta-home {
+   background-color: $color-border;
+   color: $color-text-primary;
+   padding: 3rem 1.5rem;
+   text-align: center;
+   margin-bottom: 1rem;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   border-radius: 4px;
+
+   h2 {
+      margin-bottom: 1.5rem;
+   }
+
+   /* Context-specific CTA */
+   .cta-button {
+      background-color: $color-accent;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      color: $color-text-primary;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s;
+
+      &:hover {
+         background-color: darken($color-accent, 10%);
+      }
+   }
+}

@@ -18,13 +18,13 @@
 
    .logo {
       display: flex;
-         align-items: center;
-      
-         img {
-            max-height: 70px;
-            width: auto;
-         }
+      align-items: center;
+
+      img {
+         max-height: 70px;
+         width: auto;
       }
+   }
 }
 
 /* ---------------------------------- */
@@ -100,7 +100,6 @@
       }
    }
 
-   // Animation de l'icône X
    &.is-open .hamburger-icon {
       background: transparent;
 
@@ -123,7 +122,7 @@
    top: 0;
    left: 0;
    width: 100%;
-   height: 100vh;// Prend tout l'écran 
+   height: 100vh;
    background-color: $color-text-primary;
    z-index: 999;
    flex-direction: column;
@@ -133,6 +132,9 @@
    .nav-list {
       flex-direction: column;
       text-align: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
       li {
          margin: 1rem 0;
@@ -140,23 +142,25 @@
          a {
             font-size: 1.5rem;
             padding: 1rem;
+            text-decoration: none;
+            color: $color-bg-light;
+            transition: color 0.3s;
 
             &:hover {
-               color: $color-border;
+               color: $color-accent;
             }
          }
       }
    }
 }
 
-// Pour empêcher le défilement du corps
 body.menu-active {
    overflow: hidden;
 }
 
-/* Bouton d'Action (Greige) */
-.cta-button {
-   background-color: $color-border;
+
+.main-header .cta-button {
+   background-color: $color-accent;
    color: $color-text-primary;
    text-decoration: none;
    padding: 0.5rem 1rem;
@@ -165,11 +169,10 @@ body.menu-active {
    transition: background-color 0.3s;
 
    &:hover {
-      background-color: darken($color-border, 10%);
+      background-color: $color-bg-light;
    }
 
-   // Le bouton CTA est caché sur mobile quand le menu est fermé, mais réaffiché si le menu est ouvert ou sur desktop.
    @media (max-width: #{ $breakpoint-tablet - 1px }) {
-      display: none; 
+      display: none;
    }
 }

@@ -1,0 +1,56 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/_about.scss";
+---
+
+<BaseLayout
+	title="À propos | ADS Gestion Financière"
+	description="Découvrez notre mission, notre équipe et pourquoi ADS Gestion Financière est le partenaire idéal pour les travailleurs autonomes et professionnels de la beauté.">
+	<main>
+		<!-- Hero / Intro -->
+		<section class="about-hero">
+			<h1>Qui sommes-nous ?</h1>
+			<p>
+				Chez <strong>ADS Gestion Financière</strong>, nous accompagnons les travailleurs autonomes
+				et professionnels de la beauté dans la gestion et l’optimisation de leurs finances.
+			</p>
+		</section>
+
+		<!-- Mission Section -->
+		<section class="about-mission">
+			<h2>Notre Mission</h2>
+			<ul>
+				<li>Expertise spécialisée pour indépendants et pros de la beauté</li>
+				<li>Solutions simples, claires et personnalisées</li>
+				<li>Accompagnement humain et proche du client</li>
+			</ul>
+		</section>
+
+		<!-- Team / History Section -->
+		<section class="about-team">
+			<h2>Notre Histoire</h2>
+			<p>
+				Fondée pour offrir des services financiers accessibles et personnalisés, ADS | Gestion
+				Financière met l’accent sur la transparence, l’efficacité et le soutien réel aux
+				entrepreneurs.
+			</p>
+			
+			<img src="/audrey_portrait.jpg" alt="Audrey Samson" />
+		</section>
+
+		<section class="about-why">
+			<h2>Pourquoi nous choisir ?</h2>
+			<div class="reasons-grid">
+				<div class="reason-card">✅ Fiable et transparent</div>
+				<div class="reason-card">✅ Conseils personnalisés</div>
+				<div class="reason-card">✅ Gains de temps et simplicité</div>
+			</div>
+		</section>
+
+		<!-- Call To Action -->
+		<section class="cta-about">
+			<h2>Prêt à simplifier vos finances ?</h2>
+			<a href="/contact" class="cta-button"> Contactez-nous dès aujourd’hui </a>
+		</section>
+	</main>
+</BaseLayout>

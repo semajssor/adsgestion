@@ -1,13 +1,65 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/_home.scss";
 ---
 
 <BaseLayout
 	title="Accueil | ADS Gestion Financière"
-	description="Votre partenaire financier dédié aux travailleurs autonomes et professionnels de la beauté. Expertise et services personnalisés."
-	>
+	description="Votre partenaire financier dédié aux travailleurs autonomes et professionnels de la beauté. Expertise et services personnalisés.">
 	<main>
-		<h1>Bienvenue chez ADS Gestion Financière</h1>
-		<p>Le contenu de votre page d'accueil...</p>
+		<!-- Hero Section -->
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Simplifiez vos finances, concentrez-vous sur votre métier</h1>
+				<p>
+					Chez <strong>ADS | Gestion Financière</strong>, nous accompagnons les travailleurs autonomes
+					et professionnels de la beauté avec des services clairs, personnalisés et adaptés à vos
+					besoins.
+				</p>
+				<a
+					href="https://calendly.com/adsgestion-planifionsvotreavenirensemble"
+					class="cta-button"
+					target="_blank"
+					rel="noopener noreferrer">
+					Planifiez une consultation gratuite
+				</a>
+			</div>
+		</section>
+
+		<!-- Services Section -->
+		<section class="services">
+			<h2>Nos Services</h2>
+			<div class="services-grid">
+				<div class="service-card">
+					<h3>Comptabilité & Fiscalité</h3>
+					<p>
+						Optimisez vos déclarations et simplifiez la gestion de vos finances professionnelles.
+					</p>
+				</div>
+				<div class="service-card">
+					<h3>Conseils Financiers</h3>
+					<p>
+						Profitez d’un accompagnement personnalisé pour atteindre vos objectifs à long terme.
+					</p>
+				</div>
+				<div class="service-card">
+					<h3>Ressources & Outils</h3>
+					<p>
+						Accédez à des guides et astuces pratiques pour mieux gérer vos revenus et vos dépenses.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Call To Action -->
+		<section class="cta-home">
+			<h2>Prêt à simplifier vos finances ?</h2>
+			<a
+				href="/contact"
+				class="cta-button"
+				>
+				Contactez-nous dès aujourd’hui
+			</a>
+		</section>
 	</main>
 </BaseLayout>
