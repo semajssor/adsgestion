@@ -1,0 +1,9 @@
+---
+import "../styles/_resourceCard.scss";
+const { title, description, fileUrl } = Astro.props;
+---
+
+<a class="resource-card" href={fileUrl} download>
+	<h3>{title}</h3>
+	{description && <p>{description}</p>}
+</a>

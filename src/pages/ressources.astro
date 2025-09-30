@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ResourceCard from "../components/ResourceCard.astro";
+
+const resources = [
+	{
+		title: "Assurance Collective vs Individuelle",
+		description: "Explications claires sur l’assurance collective et individuelle.",
+		fileUrl: "/resources/ass. collective vs ass. individuelle.pdf",
+	},
+	{
+		title: "Budget - Entreprise",
+		description: "Modèle Excel pour gérer le budget de votre entreprise.",
+		fileUrl: "/resources/BUDGET - Entreprise.xlsx",
+	},
+	{
+		title: "Budget - Personnel",
+		description: "Feuille de calcul pour organiser vos finances personnelles.",
+		fileUrl: "/resources/BUDGET - Personnel.xlsx",
+	},
+	{
+		title: "Budget - Pros de la beauté",
+		description: "Budget simplifié pour les professionnels de la beauté.",
+		fileUrl: "/resources/BUDGET - Pros de la beauté.xlsx",
+	},
+];
+---
+
+<BaseLayout
+	title="Ressources | ADS Gestion Financière"
+	description="Téléchargez nos guides et outils pour travailleurs autonomes et professionnels de la beauté.">
+	<main class="resources-page">
+		<h1>Ressources à Télécharger</h1>
+		<div class="resources-grid">
+			{
+				resources.map((r) => (
+					<ResourceCard title={r.title} description={r.description} fileUrl={r.fileUrl} />
+				))
+			}
+		</div>
+	</main>
+</BaseLayout>

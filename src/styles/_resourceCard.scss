@@ -1,0 +1,28 @@
+@use 'variables' as *;
+@use 'sass:color';
+
+.resource-card {
+   display: block;
+   background-color: $color-bg-secondary;
+   padding: 0.5rem 1rem;
+   border-radius: 4px;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   text-decoration: none;
+   color: $color-text-primary;
+   transition: box-shadow 0.3s;
+   margin-bottom: 1rem;
+}
+
+.resource-card:hover {
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.resource-card h3 {
+   margin: 0 0 0.5rem;
+}
+
+.resource-card p {
+   margin: 0;
+   font-size: 0.9rem;
+   color: $color-text-primary;;
+}
