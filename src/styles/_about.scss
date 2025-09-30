@@ -115,12 +115,12 @@
 /* Call To Action Section */
 .cta-about {
    background-color: $color-border;
-   color: $color-text-primary;
-   padding: 3rem 1.5rem;
-   text-align: center;
-   margin-bottom: 1rem;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   border-radius: 4px;
+      color: $color-text-primary;
+      padding: 1.5rem 1.5rem 3rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
    margin-top: 2rem;
 
    h2 {
