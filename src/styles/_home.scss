@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'sass:color';
 
 .hero {
    background-color: $color-bg-secondary;
@@ -91,7 +92,7 @@
       transition: background-color 0.3s;
 
       &:hover {
-         background-color: darken($color-accent, 10%);
+         background-color: color.adjust($color-accent, $lightness: -10%);
       }
    }
 }

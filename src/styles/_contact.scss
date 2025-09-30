@@ -1,5 +1,5 @@
 @use 'variables' as *;
-
+@use 'sass:color';
 
 .page-contact {
    padding: 3rem 1.5rem;
@@ -91,7 +91,7 @@
       width: 100%;
 
       &:hover:not(:disabled) {
-         background-color: darken($color-accent, 10%);
+         background-color: color.adjust($color-accent, $lightness: -10%);
       }
 
       &:disabled {
