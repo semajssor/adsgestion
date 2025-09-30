@@ -172,7 +172,4 @@ body.menu-active {
       background-color: $color-bg-light;
    }
 
-   @media (max-width: #{ $breakpoint-tablet - 1px }) {
-      display: none;
-   }
 }
