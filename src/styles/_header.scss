@@ -176,8 +176,7 @@ body.menu-active {
 
    @media (max-width: #{ $breakpoint-tablet - 1px }) {
       padding: 0.4rem 0.8rem; 
-      font-size: 0.9rem; 
-      position: fixed;
+      font-size: 0.7rem; 
       top: 1rem;
       right: 1rem;
       z-index: 1100;
