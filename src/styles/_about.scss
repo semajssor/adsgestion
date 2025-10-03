@@ -3,17 +3,24 @@
 
 .about-hero {
    background-color: $color-bg-secondary;
-   padding: 2rem 1.5rem 3rem 1.5rem;
+   padding: 0.75rem 0.5rem 1.55rem 0.75rem;
    text-align: center;
    margin: 2rem 0;
    border-radius: 4px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    
+   @media (min-width: $breakpoint-tablet) {
+         padding: 2rem 1.5rem;
+      }
 
-   h1 {
+   h2 {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin: 0.5rem 0 1rem 0;
       color: $color-text-primary;
+      
+      @media (min-width: $breakpoint-tablet) {
+         margin-bottom: 2rem;
+      }
    }
 
    p {
@@ -26,15 +33,24 @@
 /* Mission Section */
 .about-mission {
    text-align: center;
-   padding: 2rem 1.5rem;
+   padding: 0.75rem 0.5rem;
    background-color: $color-bg-secondary;
    border-radius: 4px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    margin: 2rem 0;
 
+   @media (min-width: $breakpoint-tablet) {
+         padding: 2rem 1.5rem;
+         margin-bottom: 2rem;
+      }
+
    h2 {
-      margin-bottom: 1.5rem;
+      margin: 0.5rem 0 1rem 0;
       color: $color-text-primary;
+
+      @media (min-width: $breakpoint-tablet) {
+         margin-bottom: 2rem;
+      }
    }
 
    ul {
@@ -57,15 +73,24 @@
 /* Team / History Section */
 .about-team {
    text-align: center;
-   padding: 2rem 1.5rem;
+   padding: 0.75rem 0.5rem;
    background-color: $color-bg-secondary;
    border-radius: 4px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
    margin: 2rem 0;
 
+   @media (min-width: $breakpoint-tablet) {
+         padding: 2rem 1.5rem;
+         margin-bottom: 2rem;
+      }
+
    h2 {
-      margin-bottom: 1rem;
+      margin: 0.5rem 0 1rem 0;
       color: $color-text-primary;
+         
+      @media (min-width: $breakpoint-tablet) {
+         margin-bottom: 2rem;
+      }
    }
 
    p {
@@ -79,68 +104,48 @@
       max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-   }
+   }   
 }
 
 /* Why Choose Us Section */
 .about-why {
    text-align: center;
-   padding: 2rem 1.5rem;
+   padding: 0.75rem 0.5rem;
    background-color: $color-bg-secondary;
    border-radius: 4px;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
+   @media (min-width: $breakpoint-tablet) {
+         padding: 2rem 1.5rem;
+         margin-bottom: 2rem;
+      }
+
    h2 {
-      margin-bottom: 2rem;
+      margin: 0.5rem 0 1rem 0;
       color: $color-text-primary;
+
+      @media (min-width: $breakpoint-tablet) {
+         margin-bottom: 2rem;
+      }
    }
 
    .reasons-grid {
       display: grid;
-      gap: 1rem;
+      // gap: 1rem;
 
       @media (min-width: $breakpoint-tablet) {
          grid-template-columns: repeat(3, 1fr);
-         gap: 2rem;
       }
 
       .reason-card {
-         padding: 1.5rem;
+         padding: 0.75rem;
          border-radius: 8px;
          font-weight: bold;
          color: $color-text-primary;
-      }
-   }
-}
 
-/* Call To Action Section */
-.cta-about {
-   background-color: $color-border;
-      color: $color-text-primary;
-      padding: 1.5rem 1.5rem 3rem 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-   margin-top: 2rem;
-
-   h2 {
-      margin-bottom: 1.5rem;
-   }
-
-   /* Context-specific CTA */
-   .cta-button {
-      background-color: $color-accent;
-      color: $color-text-primary;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s;
-
-      &:hover {
-         background-color: color.adjust($color-accent, $lightness: -10%);
+         @media (min-width: $breakpoint-tablet) {
+            padding: 1.5rem;
+         }
       }
    }
 }

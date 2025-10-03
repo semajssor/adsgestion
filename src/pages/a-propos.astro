@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/_about.scss";
+import CtaSection from "../components/CtaSection.jsx";
 ---
 
 <BaseLayout
@@ -48,9 +49,10 @@ import "../styles/_about.scss";
 		</section>
 
 		<!-- Call To Action -->
-		<section class="cta-about">
-			<h2>Prêt à simplifier vos finances ?</h2>
-			<a href="/contact" class="cta-button"> Contactez-nous dès aujourd’hui </a>
-		</section>
+		<CtaSection
+  title="Prêt à simplifier vos finances ?"
+  buttonText="Contactez-nous dès aujourd’hui"
+  buttonLink="/contact"
+/>
 	</main>
 </BaseLayout>
