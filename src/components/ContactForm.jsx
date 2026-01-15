@@ -19,7 +19,7 @@ function ContactForm() {
 	return (
 		<form onSubmit={customSubmit} className="contact-form-ads">
 			<div className="form-group">
-				<label htmlFor="name">Nom / Nom de l'entreprise</label>
+				<label htmlFor="name">Nom complet / Nom de l'entreprise</label>
 				<input id="name" type="text" name="name" required />
 			</div>
 
@@ -36,7 +36,7 @@ function ContactForm() {
 
 			<div className="form-group">
 				<label htmlFor="message">Que pouvons-nous faire pour vous ?</label>
-				<textarea id="message" name="message" rows="5" required />
+				<textarea id="message" name="message" rows="5" required placeholder="" />
 				<ValidationError prefix="Message" field="message" errors={state.errors} />
 			</div>
 
