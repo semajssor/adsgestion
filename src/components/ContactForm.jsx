@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { navigate } from "astro/virtual-modules/transitions-router.js";
+import { PatternFormat } from "react-number-format";
 
 function ContactForm() {
 	const [state, handleSubmit] = useForm("xpwypkvy");
@@ -31,7 +32,15 @@ function ContactForm() {
 
 			<div className="form-group">
 				<label htmlFor="phone">Numéro de téléphone</label>
-				<input id="phone" type="tel" name="phone" required />
+				<PatternFormat
+					format="(###) ###-####"
+					mask="_"
+					id="phone"
+					name="phone"
+					type="tel"
+					required
+					className="phone-input"
+				/>
 			</div>
 
 			<div className="form-group">
