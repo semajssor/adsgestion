@@ -1,7 +1,7 @@
 ---
 import "../styles/_header.scss";
 import { useState } from "react";
-import { CONTACT_LINKS } from "../constants.js";
+import { CONTACT_INFO } from "../constants.js";
 
 const navLinks = [
 	{ title: "Accueil", href: "/" },
@@ -32,7 +32,7 @@ const navLinks = [
 		</nav>
 
 		<a
-			href={CONTACT_LINKS.booking}
+			href={CONTACT_INFO.booking}
 			class="cta-button"
 			target="_blank"
 			rel="noopener noreferrer"
