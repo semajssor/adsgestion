@@ -1,8 +1,9 @@
 {
-	"rewrites": [
+	"redirects": [
 		{
 			"source": "/rendez-vous",
-			"destination": "https://outlook.office.com/book/ADSGestionFinancire@adsgestion.ca/"
+			"destination": "https://outlook.office.com/book/ADSGestionFinancire@adsgestion.ca/",
+			"permanent": true
 		}
 	]
 }
