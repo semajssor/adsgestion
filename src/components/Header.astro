@@ -1,7 +1,7 @@
 ---
 import "../styles/_header.scss";
 import { useState } from "react";
-import { CONTACT_INFO } from "../constants.js";
+import { CONTACT_INFO } from "../../constants.js";
 
 const navLinks = [
 	{ title: "Accueil", href: "/" },
@@ -31,12 +31,8 @@ const navLinks = [
 			</ul>
 		</nav>
 
-		<a
-			href={CONTACT_INFO.bookingUrl}
-			class="cta-button"
-			target="_blank"
-			rel="noopener noreferrer"
-			> Prendre rendez-vous
+		<a href={CONTACT_INFO.bookingUrl} class="cta-button" target="_blank" rel="noopener noreferrer">
+			Prendre rendez-vous
 		</a>
 
 		<button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir le menu de navigation">
