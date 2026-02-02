@@ -153,7 +153,7 @@
 
       .footer-container {
          flex-direction: row;
-         justify-content: space-between;
+         justify-content: space-around;
          align-items: flex-start;
          text-align: left;
       }
@@ -167,11 +167,15 @@
       .footer-nav,
       .footer-contact,
       .footer-legal {
-         align-items: flex-start;
+         align-items: center;
       }
 
       .footer-legal br {
          display: block;
+      }
+
+      .footer-legal {
+         border-top: none;
       }
    }
 }
