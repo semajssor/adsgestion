@@ -84,7 +84,7 @@
    color: $color-bg-light;
    text-align: center;
    border-radius: 4px;
-   padding: 0.6rem 0.5rem; // Encore plus mince
+   padding: 0.6rem 0.5rem;
 
    .footer-container {
       display: flex;
@@ -112,18 +112,18 @@
    p,
    a,
    ul li {
-      font-size: 0.65rem; // Police minimaliste mais lisible
+      font-size: 0.65rem; 
       margin: 0;
       line-height: 1.2;
    }
 
    a {
       color: $color-bg-light;
-      text-decoration: none; // Aucun soulignement par défaut
+      text-decoration: none; 
       transition: color 0.2s ease-in-out;
 
       &:hover {
-         color: $color-accent; // Réagit seulement au survol
+         color: $color-accent; 
       }
    }
 
@@ -132,7 +132,7 @@
       padding: 0;
       margin: 0;
       display: flex;
-      flex-direction: row; // Tout sur une ligne sur mobile
+      flex-direction: row; 
       gap: 0.8rem;
       justify-content: center;
    }
@@ -145,35 +145,43 @@
       br {
          display: none;
       }
-
-      // Copyright sur une seule ligne
    }
 
    // --- VERSION DESKTOP ---
-   @media (min-width: $breakpoint-tablet) {
-      padding: 1.2rem 1rem;
+   // @media (min-width: $breakpoint-tablet) {
+   //    padding: 1.2rem 1rem;
 
-      .footer-container {
-         flex-direction: row;
-         justify-content: space-between;
-         align-items: flex-start;
-         text-align: left;
-      }
+   //    .footer-container {
+   //       flex-direction: row;
+   //       justify-content: space-between;
+   //       align-items: flex-start;
+   //       text-align: left;
+   //    }
 
-      ul {
-         flex-direction: column;
-         align-items: flex-start;
-         gap: 0.2rem;
-      }
+   //    ul {
+   //       flex-direction: column;
+   //       align-items: flex-start;
+   //       gap: 0.2rem;
+   //    }
 
-      .footer-nav,
-      .footer-contact,
-      .footer-legal {
-         align-items: flex-start;
-      }
+   //    .footer-nav,
+   //    .footer-contact,
+   //    .footer-legal {
+   //       align-items: flex-start;
+   //    }
 
-      .footer-legal br {
-         display: block;
-      }
-   }
+   //    .footer-legal br {
+   //       display: block;
+   //    }
+   // }
+       @media (min-width: $breakpoint-tablet) {
+                .footer-container {
+                   display: flex;
+                   flex-direction: row;
+                   justify-content: space-between;
+                   align-items: flex-start;
+                   flex-wrap: nowrap;
+                   font-size: 0.8rem;
+                }
+             }
 }
