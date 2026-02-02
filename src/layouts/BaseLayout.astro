@@ -32,6 +32,8 @@ const {
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:image" content="/favicon_ADS.png" />
 
 		<!-- Google Font -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,8 +46,10 @@ const {
 	</head>
 	<body class="layout">
 		<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT7LZ96R"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WT7LZ96R"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
 <!-- End Google Tag Manager (noscript) -->
 		<Header />
 		<main class="content">

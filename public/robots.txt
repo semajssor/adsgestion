@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /collecte-de-donnees
+Disallow: /thank-you
+
+# Permet aux robots de voir tout le reste du site
+Allow: /
+Allow : /politique-confidentialite

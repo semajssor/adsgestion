@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/collecte-de-donnees.scss';
+---
+
+<BaseLayout title="Collecte de données | ADS Gestion Financière">
+  <head>
+    <meta name="robots" content="noindex, nofollow">
+  </head>
+
+  <main class="form-container">
+    <div class="header-info">
+      <h1>Formulaire administratif de collecte de données</h1>
+      <p>Réservé à l'usage exclusif d'ADS | Gestion financière</p>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe 
+        src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=eskHTwIaL0WzQyAvOYB8HEbIzLcE1slBmC69rmqdsOZUMVI5QVkwNzJEVThHMVZWOEZPNzJPWVExTy4u&embed=true" 
+        frameborder="0" 
+        width="100%"
+        height="100%"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </main>
+</BaseLayout>
