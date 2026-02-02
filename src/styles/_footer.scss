@@ -1,22 +1,95 @@
+// @use '_variables' as *;
+// @use 'sass:color';
+
+// .main-footer {
+//    background-color: $color-text-primary;
+//    color: $color-bg-light;
+//    font-size: 0.9rem;
+//    text-align: center;
+//    border-radius: 4px;
+//    padding: 1rem; 
+
+
+//    .footer-container {
+//       display: flex;
+//       flex-direction: column;
+//       flex-wrap: nowrap;
+//       justify-content: center;
+//       align-items: center;
+//       gap: 1rem;
+//       max-width: $breakpoint-desktop;
+//       margin: 0 auto;
+//    }
+
+//    .footer-nav,
+//    .footer-legal,
+//    .footer-contact {
+//       flex: 1 1 auto;
+//       min-width: 150px; 
+//       display: flex;
+//       justify-content: flex-start;
+//       align-items: center;
+//       flex-direction: column;
+//    }
+
+//    h4 {
+//       color: $color-border;
+//       margin: 0.5rem 0;
+//       font-size: 0.9rem;
+//    }
+
+//    p{
+//       font-size: 0.8rem;
+//    }
+
+//    a {
+//       color: $color-bg-light;
+//       text-decoration: none;
+//       transition: color 0.3s;
+//       font-size: 0.8rem;
+
+//       &:hover {
+//          color: $color-accent;
+//       }
+//    }
+
+//    ul {
+//       list-style: none;
+//       padding: 0;
+//       margin: 0;
+
+//       li {
+//          margin-bottom: 0.25rem;
+//       }
+//    }
+
+//    // On tablet/desktop: space out more
+//    @media (min-width: $breakpoint-tablet) {
+//       .footer-container {
+//          display: flex;
+//          flex-direction: row;
+//          justify-content: space-between;
+//          align-items: flex-start;
+//          flex-wrap: nowrap;
+//          font-size: 0.8rem;
+//       }
+//    }
+// }
+
 @use '_variables' as *;
 @use 'sass:color';
 
 .main-footer {
    background-color: $color-text-primary;
    color: $color-bg-light;
-   font-size: 0.9rem;
    text-align: center;
    border-radius: 4px;
-   padding: 1rem; 
-
+   padding: 1.5rem 1rem; // Réduit le padding global
 
    .footer-container {
       display: flex;
       flex-direction: column;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
+      gap: 1.5rem; // Espace constant entre les blocs sur mobile
       max-width: $breakpoint-desktop;
       margin: 0 auto;
    }
@@ -24,29 +97,32 @@
    .footer-nav,
    .footer-legal,
    .footer-contact {
-      flex: 1 1 auto;
-      min-width: 150px; 
       display: flex;
-      justify-content: flex-start;
-      align-items: center;
       flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
    }
 
    h4 {
       color: $color-border;
-      margin: 0.5rem 0;
-      font-size: 0.9rem;
+      margin: 0; // Enlever les marges par défaut des h4
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
    }
 
-   p{
-      font-size: 0.8rem;
+   p,
+   a,
+   ul li {
+      font-size: 0.75rem; // On réduit légèrement la taille du texte
+      margin: 0;
+      line-height: 1.4;
    }
 
    a {
       color: $color-bg-light;
       text-decoration: none;
       transition: color 0.3s;
-      font-size: 0.8rem;
 
       &:hover {
          color: $color-accent;
@@ -57,21 +133,42 @@
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+   }
 
-      li {
-         margin-bottom: 0.25rem;
+   // --- OPTIMISATION MOBILE (Compactage) ---
+   @media (max-width: $breakpoint-tablet) {
+      padding: 1rem;
+
+      .footer-container {
+         gap: 1.2rem;
+      }
+
+      .footer-legal {
+         order: 3; // On met les droits d'auteur tout en bas
+         border-top: 1px solid rgba($color-border, 0.2);
+         padding-top: 1rem;
+         width: 100%;
       }
    }
 
-   // On tablet/desktop: space out more
+   // --- VERSION DESKTOP (Ligne horizontale) ---
    @media (min-width: $breakpoint-tablet) {
+      padding: 2rem 1rem;
+
       .footer-container {
-         display: flex;
          flex-direction: row;
          justify-content: space-between;
          align-items: flex-start;
-         flex-wrap: nowrap;
-         font-size: 0.8rem;
+         text-align: left; // Texte à gauche sur ordi
+      }
+
+      .footer-nav,
+      .footer-legal,
+      .footer-contact {
+         align-items: flex-start;
       }
    }
 }
