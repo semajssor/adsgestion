@@ -155,7 +155,7 @@
          flex-direction: row;
          justify-content: space-around;
          align-items: flex-start;
-         text-align: left;
+   
       }
 
       ul {
@@ -176,6 +176,7 @@
 
       .footer-legal {
          border-top: none;
+         gap: 0.2rem;
       }
    }
 }
