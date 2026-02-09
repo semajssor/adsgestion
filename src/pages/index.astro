@@ -22,7 +22,8 @@ import { CONTACT_INFO } from "../constants.js";
 					href={CONTACT_INFO.bookingUrl}
 					class="cta-button"
 					target="_blank"
-					rel="noopener noreferrer">
+					rel="noopener noreferrer"
+					onclick="gtag('event', 'generate_lead', {'event_category': 'Contact', 'event_label': 'Bouton RDV Outlook', 'transport_type': 'beacon'});">
 					Planifiez une consultation gratuite
 				</a>
 			</div>

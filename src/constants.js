@@ -4,12 +4,12 @@ export const SITE_METADATA = {
 };
 
 export const CONTACT_INFO = {
-   email: "info@adsgestion.ca", 
+   email: "adminsitration@adsgestion.ca", 
    phone: "(514) 824-8131",
    bookingUrl: "/rendez-vous",
 };
 
 export const SOCIAL_LINKS = {
-   //linkedin: "",
-   // facebook: "...",
+	instagram: "https://instagram.com/audreysamson_finance",
+	facebook: "https://www.facebook.com/profile.php?id=61561042739695",
 };
