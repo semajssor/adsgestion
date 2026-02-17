@@ -9,6 +9,16 @@ function ContactForm() {
 	const customSubmit = async (event) => {
 		event.preventDefault();
 
+		// --- AJOUT DU TRACKING GA4 ---
+		if (typeof window !== "undefined" && window.gtag) {
+			window.gtag("event", "generate_lead", {
+				"event_category": "Contact",
+				"event_label": "Formulaire ADS Gestion",
+				"value": 1.0,
+			});
+		}
+		// -----------------------------
+
 		const form = new FormData(event.target);
 		await handleSubmit(form);
 	};

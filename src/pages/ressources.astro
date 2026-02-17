@@ -40,3 +40,38 @@ const resources = [
 		</div>
 	</main>
 </BaseLayout>
+
+<script>
+	// On définit une interface pour que TS sache que gtag existe sur window
+	interface Window {
+		gtag?: (...args: any[]) => void;
+	}
+
+	const trackDownloads = () => {
+		const resourceLinks = document.querySelectorAll(".resources-grid a");
+
+		resourceLinks.forEach((link) => {
+			link.addEventListener("click", (e) => {
+				// On précise à TS que la cible est bien un lien (HTMLAnchorElement)
+				const target = e.currentTarget as HTMLAnchorElement;
+
+				if (!target) return;
+
+				const fileName = target.getAttribute("href") || "unknown";
+				const fileTitle = target.querySelector("h2")?.innerText || fileName;
+
+				// On vérifie window.gtag de façon sécurisée
+				const globalWindow = window as unknown as Window;
+				if (globalWindow.gtag) {
+					globalWindow.gtag("event", "file_download", {
+						"file_name": fileName,
+						"file_extension": fileName.split(".").pop(),
+						"event_label": `Téléchargement: ${fileTitle}`,
+					});
+				}
+			});
+		});
+	};
+
+	trackDownloads();
+</script>
