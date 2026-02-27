@@ -1,7 +1,7 @@
 {
 	"redirects": [
 		{
-			"source": "/rendez-vous",
+			"source": "/rendez-vous/:path*",
 			"destination": "https://outlook.office.com/book/ADSGestionFinancire@adsgestion.ca/",
 			"permanent": true
 		}
