@@ -13,7 +13,7 @@ const navLinks = [
 
 <header class="main-header">
 	<div class="header-container">
-		<a href="/" class="logo" aria-label="Accueil ADS Gestion Financière">
+		<a href="/" class="logo" aria-label="Accueil Audrey Samson - Conseils fortune">
 			<img src="/adsgf.png" alt="Logo ADS Gestion Financière" width="150" height="auto" />
 		</a>
 
@@ -34,7 +34,6 @@ const navLinks = [
 		<a
 			href="/contact"
 			class="cta-button"
-			target="_blank"
 			rel="noopener noreferrer"
 			onclick="gtag('event', 'generate_lead', {'event_category': 'Contact', 'event_label': 'Bouton RDV Outlook', 'transport_type': 'beacon'});">
 			Contactez-nous
@@ -47,17 +46,26 @@ const navLinks = [
 </header>
 
 <script>
-	// Logique JavaScript pour le menu Hamburger
-	const toggleButton = document.getElementById("menu-toggle");
-	const nav = document.querySelector(".main-nav");
-	const body = document.body;
+	// On écoute l'événement d'Astro pour réinitialiser le script à chaque changement de page
+	document.addEventListener("astro:page-load", () => {
+		const toggleButton = document.getElementById("menu-toggle");
+		const nav = document.querySelector(".main-nav");
+		const body = document.body;
 
-	if (toggleButton && nav) {
-		toggleButton.addEventListener("click", () => {
-			nav.classList.toggle("is-open");
-			toggleButton.classList.toggle("is-open");
-			// Empêche le défilement du body lorsque le menu est ouvert
-			body.classList.toggle("menu-active");
-		});
-	}
+		// Optionnel : s'assurer que le menu se ferme automatiquement lors du changement de page
+		if (nav && toggleButton) {
+			nav.classList.remove("is-open");
+			toggleButton.classList.remove("is-open");
+			body.classList.remove("menu-active");
+		}
+
+		if (toggleButton && nav) {
+			toggleButton.addEventListener("click", () => {
+				nav.classList.toggle("is-open");
+				toggleButton.classList.toggle("is-open");
+				// Empêche le défilement du body lorsque le menu est ouvert
+				body.classList.toggle("menu-active");
+			});
+		}
+	});
 </script>
