@@ -6,7 +6,7 @@ export const SITE_METADATA = {
 export const CONTACT_INFO = {
    email: "adminsitration@adsgestion.ca", 
    phone: "(514) 824-8131",
-   //bookingUrl: "/rendez-vous",
+   bookingUrl: "/rendez-vous",
 };
 
 export const SOCIAL_LINKS = {

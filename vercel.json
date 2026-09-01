@@ -2,7 +2,7 @@
 	"redirects": [
 		{
 			"source": "/rendez-vous/:path*",
-			"destination": "https://outlook.office.com/book/ADSGestionFinancire@adsgestion.ca/",
+			"destination": "https://outlook.office.com/book/ConseilsFortune@conseilsfortune.onmicrosoft.com/?ismsaljsauthenabled",
 			"permanent": true
 		}
 	]
