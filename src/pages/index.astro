@@ -2,7 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/_home.scss";
 import CtaSection from "../components/CtaSection";
-import { CONTACT_INFO } from "../constants.js";
+// import { CONTACT_INFO } from "../constants.js";
 ---
 
 <BaseLayout
@@ -26,14 +26,14 @@ import { CONTACT_INFO } from "../constants.js";
 					onclick="gtag('event', 'generate_lead', {'event_category': 'Contact', 'event_label': 'Bouton RDV Outlook', 'transport_type': 'beacon'});">
 					Contactez-nous
 				</a>
-				<br />
+				<!-- <br />
 				<a
 					href={CONTACT_INFO.bookingUrl}
 					class="cta-button"
 					rel="noopener noreferrer"
 					onclick="gtag('event', 'generate_lead', {'event_category': 'Contact', 'event_label': 'Bouton RDV Outlook', 'transport_type': 'beacon'});">
 					Planifier en ligne
-				</a>
+				</a> -->
 			</div>
 		</section>
 
