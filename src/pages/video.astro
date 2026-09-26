@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/_video.scss";
+
+// Remplace cette URL par l'URL publique exacte de ton fichier dans Vercel Blob
+const videoUrl =
+	"https://amfrjt6tcekku3bu.private.blob.vercel-storage.com/Pubsiteweb.format%20vertical.mov?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfYU1GUkpUNlRDZUtrdTNCdSIsIm93bmVySWQiOiJ0ZWFtX0tiN1N5Q1N2TVd2QlNER1RWVmlxMXh3TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkwNTA1OTc0Mzg4LCJpYXQiOjE3OTA0NjI3NzQ1NzZ9.QfrfDFIqxN1h13Cx5BPPw2oKFS6B__BD37dxtjNArl4&vercel-blob-signature=95aZxlSt1mreiVT-nWPtNxhlHn27cZL8IVqXM_pCcf4";
+---
+
+<BaseLayout title="Vidéo | Audrey Samson - Conseils fortune">
+	<main class="page-video">
+		<section>
+			<h1>Ça vous intéresse ?</h1>
+
+			<div class="video">
+				<div class="video-grid">
+					<div class="video-card">
+						<div class="video-wrapper">
+							<video src={videoUrl} controls playsinline preload="metadata">
+								Votre navigateur ne prend pas en charge la lecture de vidéos.
+							</video>
+						</div>
+						<p>Découvrez notre approche en gestion financière</p>
+						<a href="/rendez-vous" class="cta-button">Prendre rendez-vous</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</BaseLayout>
