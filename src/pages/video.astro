@@ -15,16 +15,19 @@ const videoUrl =
 				<div class="video-grid">
 					<div class="video-card">
 						<div class="video-wrapper">
-							<video src={videoUrl} controls playsinline preload="metadata">
+							<video 
+                     src={videoUrl} 
+                     autoplay 
+                     muted 
+                     loop 
+                     playsinline 
+                     controls 
+                     preload="metadata">
 								Votre navigateur ne prend pas en charge la lecture de vidéos.
 							</video>
 						</div>
 						<p>Découvrez notre approche en gestion financière</p>
-						<a 
-                  href="/rendez-vous" 
-                  class="cta-button" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+						<a href="/rendez-vous" class="cta-button" target="_blank" rel="noopener noreferrer"
 							>Prendre rendez-vous</a
 						>
 					</div>
