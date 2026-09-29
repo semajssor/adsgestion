@@ -2,8 +2,8 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/_video.scss";
 
-const videoUrl =
-	"https://amfrjt6tcekku3bu.private.blob.vercel-storage.com/Pubsiteweb.format%20vertical.mov?vercel-blob-delegation=eyJzdG9yZUlkIjoic3RvcmVfYU1GUkpUNlRDZUtrdTNCdSIsIm93bmVySWQiOiJ0ZWFtX0tiN1N5Q1N2TVd2QlNER1RWVmlxMXh3TiIsInBhdGhuYW1lIjoiKiIsIm9wZXJhdGlvbnMiOlsiZ2V0IiwiaGVhZCJdLCJ2YWxpZFVudGlsIjoxNzkwNjQwOTk3NTg2LCJpYXQiOjE3OTA1OTc3OTc3NjF9.RGtu5teIDjPUGVGeArQcsHpuV1Ua9VXt5ruOd7OPLdY&vercel-blob-signature=S_ownTa0x70kcjwIjYrSXdsMebldEv-IoV47QUEjU90";
+const videoUrl = import.meta.env.PUBLIC_BLOB_VIDEO_URL;
+
 ---
 
 <BaseLayout title="Vidéo | Audrey Samson - Conseils fortune">
