@@ -4,13 +4,22 @@ import ResourceCard from "../components/ResourceCard.astro";
 import { resources } from "../data/resources.js";
 import "../styles/_video.scss";
 
-// URL de Booking direct pour Appel Exploratoire
+// const videoUrl = "https://va07pbctouxewcis.public.blob.vercel-storage.com/Pubsiteweb-vertical.mp4";
+
+// Identifiant de votre vidéo YouTube Short
+const youtubeVideoURL =
+	"https://www.youtube-nocookie.com/embed/6WDqStCBcyw?autoplay=1&mute=1&rel=0&modestbranding=1";
+
+//URL de Booking direct pour Appel Exploratoire
 const appelExploratoireUrl =
 	"https://bookings.cloud.microsoft/book/ConseilsFortune@conseilsfortune.onmicrosoft.com/s/nWNraLp860KGoUMc6UW5YQ2?ismsaljsauthenabled=true";
 
-// Sélection des ressources
+// Option A : Choisir précisément par ID
 const selectedIds = ["credit-qc", "assurance"];
 const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
+
+// Option B : Ou prendre seulement celles qui ont featured: true
+// const selectedResources = resources.filter((r) => r.featured);
 ---
 
 <BaseLayout title="Vidéo | Audrey Samson - Conseils fortune">
@@ -22,8 +31,12 @@ const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 				<div class="video-grid">
 					<div class="video-card">
 						<div class="video-wrapper">
-							<!-- Conteneur ciblé par l'API JavaScript YouTube -->
-							<div id="youtube-player"></div>
+							<iframe
+								src={youtubeVideoURL}
+								title="Vous êtes prêt ? On y va !"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen>
+							</iframe>
 						</div>
 						<p>Découvrez notre approche en gestion financière</p>
 						<a
@@ -54,12 +67,9 @@ const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 <script>
 	interface Window {
 		gtag?: (...args: any[]) => void;
-		YT?: any;
-		onYouTubeIframeAPIReady?: () => void;
 	}
 
-	const initPage = () => {
-		// 1. Suivi des téléchargements
+	const trackDownloads = () => {
 		const resourceLinks = document.querySelectorAll(".resources-grid a");
 
 		resourceLinks.forEach((link) => {
@@ -68,7 +78,7 @@ const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 				if (!target) return;
 
 				const fileName = target.getAttribute("href") || "unknown";
-				const fileTitle = target.querySelector("h3, h2")?.innerText || fileName;
+				const fileTitle = target.querySelector("h2")?.innerText || fileName;
 
 				const globalWindow = window as unknown as Window;
 				if (globalWindow.gtag) {
@@ -80,51 +90,7 @@ const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 				}
 			});
 		});
-
-		// 2. Initialisation du lecteur YouTube
-		const playerContainer = document.getElementById("youtube-player");
-		if (!playerContainer) return;
-
-		const createPlayer = () => {
-			const globalWindow = window as unknown as Window;
-			if (globalWindow.YT && globalWindow.YT.Player) {
-				new globalWindow.YT.Player("youtube-player", {
-					videoId: "6WDqStCBcyw",
-					playerVars: {
-						autoplay: 1,
-						mute: 1,
-						loop: 1,
-						playlist: "6WDqStCBcyw",
-						rel: 0,
-						modestbranding: 1,
-						playsinline: 1,
-					},
-					events: {
-						onReady: (event: any) => {
-							event.target.playVideo();
-						},
-					},
-				});
-			}
-		};
-
-		const globalWindow = window as unknown as Window;
-
-		if (!globalWindow.YT) {
-			// Charger l'API si elle n'est pas déjà présente
-			const tag = document.createElement("script");
-			tag.src = "https://www.youtube.com/iframe_api";
-			const firstScriptTag = document.getElementsByTagName("script")[0];
-			firstScriptTag.parentNode?.insertBefore(tag, firstScriptTag);
-
-			globalWindow.onYouTubeIframeAPIReady = createPlayer;
-		} else {
-			// Si l'API est déjà chargée (ex: navigation SPA)
-			createPlayer();
-		}
 	};
 
-	// Exécution au chargement initial et lors des navigations Astro
-	document.addEventListener("DOMContentLoaded", initPage);
-	document.addEventListener("astro:page-load", initPage);
+	trackDownloads();
 </script>
