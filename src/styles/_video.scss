@@ -49,21 +49,22 @@
          padding: 1.5rem 1rem;
          border-radius: 12px;
          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-         max-width: 380px; // Idéal pour contenir une vidéo au format vertical (9:16)
+         max-width: 380px;
          width: 100%;
          margin: 0 auto;
 
          .video-wrapper {
             width: 100%;
+            aspect-ratio: 9 / 16; // Assure le format vertical exact pour le Short
             border-radius: 8px;
             overflow: hidden;
             background-color: #000;
 
-            video {
+            iframe {
                width: 100%;
-               height: auto;
+               height: 100%;
+               border: 0;
                display: block;
-               object-fit: cover;
             }
          }
       }
@@ -83,7 +84,7 @@
 
       .resource-card {
          flex: 1 1 320px;
-         max-width: 400px; // Empêche une carte unique de s'étirer à l'infini
+         max-width: 400px;
       }
    }
 }
