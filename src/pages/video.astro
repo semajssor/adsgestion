@@ -4,7 +4,14 @@ import ResourceCard from "../components/ResourceCard.astro";
 import { resources } from "../data/resources.js";
 import "../styles/_video.scss";
 
-const videoUrl = "https://va07pbctouxewcis.public.blob.vercel-storage.com/Pubsiteweb-vertical.mp4";
+// const videoUrl = "https://va07pbctouxewcis.public.blob.vercel-storage.com/Pubsiteweb-vertical.mp4";
+
+// Identifiant de votre vidéo YouTube Short
+const youtubeVideoURL = "https://youtu.be/6WDqStCBcyw";
+
+//URL de Booking direct pour Appel Exploratoire
+const appelExploratoireUrl =
+	"https://bookings.cloud.microsoft/book/ConseilsFortune@conseilsfortune.onmicrosoft.com/s/nWNraLp860KGoUMc6UW5YQ2?ismsaljsauthenabled=true";
 
 // Option A : Choisir précisément par ID
 const selectedIds = ["credit-qc", "assurance"];
@@ -23,13 +30,16 @@ const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 				<div class="video-grid">
 					<div class="video-card">
 						<div class="video-wrapper">
-							<video src={videoUrl} autoplay muted loop playsinline controls preload="metadata">
-								Votre navigateur ne prend pas en charge la lecture de vidéos.
-							</video>
+							<iframe
+								src={youtubeVideoURL}
+								title="Vous êtes prêt ? On y va !"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen>
+							</iframe>
 						</div>
 						<p>Découvrez notre approche en gestion financière</p>
 						<a
-							href="https://bookings.cloud.microsoft/book/ConseilsFortune@conseilsfortune.onmicrosoft.com/s/nWNraLp860KGoUMc6UW5YQ2?ismsaljsauthenabled=true"
+							href={appelExploratoireUrl}
 							class="cta-button"
 							target="_blank"
 							rel="noopener noreferrer">Prendre rendez-vous</a
