@@ -1,35 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ResourceCard from "../components/ResourceCard.astro";
+import { resources } from "../data/resources.js";
 
-const resources = [
-	{
-		title: "Assurance Collective vs Individuelle",
-		description: "Explications claires sur l’assurance collective et individuelle.",
-		fileUrl: "/resources/ass. collective vs ass. individuelle.pdf",
-	},
-	{
-		title: "Maîtriser son crédit au Québec",
-		description:
-			"Guide pratique pour comprendre, protéger et améliorer votre dossier de crédit chez Equifax et TransUnion.",
-		fileUrl: "/resources/Guide crédit Québec — aperçu gratuit - Octobre 2026.pdf",
-	},
-	{
-		title: "Budget - Entreprise",
-		description: "Modèle Excel pour gérer le budget de votre entreprise.",
-		fileUrl: "/resources/BUDGET - Entreprise.xlsx",
-	},
-	{
-		title: "Budget - Personnel",
-		description: "Feuille de calcul pour organiser vos finances personnelles.",
-		fileUrl: "/resources/BUDGET - Personnel.xlsx",
-	},
-	{
-		title: "Budget - Pros de la beauté",
-		description: "Budget simplifié pour les professionnels de la beauté.",
-		fileUrl: "/resources/BUDGET - Pros de la beauté.xlsx",
-	},
-];
 ---
 
 <BaseLayout
@@ -48,7 +21,6 @@ const resources = [
 </BaseLayout>
 
 <script>
-	// On définit une interface pour que TS sache que gtag existe sur window
 	interface Window {
 		gtag?: (...args: any[]) => void;
 	}
@@ -58,7 +30,7 @@ const resources = [
 
 		resourceLinks.forEach((link) => {
 			link.addEventListener("click", (e) => {
-				// On précise à TS que la cible est bien un lien (HTMLAnchorElement)
+				
 				const target = e.currentTarget as HTMLAnchorElement;
 
 				if (!target) return;
@@ -66,7 +38,7 @@ const resources = [
 				const fileName = target.getAttribute("href") || "unknown";
 				const fileTitle = target.querySelector("h2")?.innerText || fileName;
 
-				// On vérifie window.gtag de façon sécurisée
+				
 				const globalWindow = window as unknown as Window;
 				if (globalWindow.gtag) {
 					globalWindow.gtag("event", "file_download", {

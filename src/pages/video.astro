@@ -1,8 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ResourceCard from "../components/ResourceCard.astro";
+import { resources } from "../data/resources.js";
 import "../styles/_video.scss";
 
 const videoUrl = "https://va07pbctouxewcis.public.blob.vercel-storage.com/Pubsiteweb-vertical.mp4";
+
+// Option A : Choisir précisément par ID
+const selectedIds = ["credit-qc"];
+const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
+
+// Option B : Ou prendre seulement celles qui ont featured: true
+// const selectedResources = resources.filter((r) => r.featured);
 ---
 
 <BaseLayout title="Vidéo | Audrey Samson - Conseils fortune">
@@ -25,6 +34,49 @@ const videoUrl = "https://va07pbctouxewcis.public.blob.vercel-storage.com/Pubsit
 					</div>
 				</div>
 			</div>
+
+			<!-- Section des ressources sous la vidéo -->
+			<div class="resources-section">
+				<h2>Ressources recommandées</h2>
+				<div class="resources-grid">
+					{
+						selectedResources.map((r) => (
+							<ResourceCard title={r.title} description={r.description} fileUrl={r.fileUrl} />
+						))
+					}
+				</div>
+			</div>
 		</section>
 	</main>
 </BaseLayout>
+
+<script>
+	interface Window {
+		gtag?: (...args: any[]) => void;
+	}
+
+	const trackDownloads = () => {
+		const resourceLinks = document.querySelectorAll(".resources-grid a");
+
+		resourceLinks.forEach((link) => {
+			link.addEventListener("click", (e) => {
+				const target = e.currentTarget as HTMLAnchorElement;
+				if (!target) return;
+
+				const fileName = target.getAttribute("href") || "unknown";
+				const fileTitle = target.querySelector("h2")?.innerText || fileName;
+
+				const globalWindow = window as unknown as Window;
+				if (globalWindow.gtag) {
+					globalWindow.gtag("event", "file_download", {
+						"file_name": fileName,
+						"file_extension": fileName.split(".").pop(),
+						"event_label": `Téléchargement: ${fileTitle}`,
+					});
+				}
+			});
+		});
+	};
+
+	trackDownloads();
+</script>
