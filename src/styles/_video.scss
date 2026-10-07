@@ -69,3 +69,21 @@
       }
    }
 }
+
+.resources-section {
+   max-width: 800px;
+   margin: 2.5rem auto 0;
+   text-align: center;
+
+   .resources-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+
+      .resource-card {
+         flex: 1 1 320px;
+         max-width: 400px; // Empêche une carte unique de s'étirer à l'infini
+      }
+   }
+}
