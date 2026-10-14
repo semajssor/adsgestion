@@ -31,7 +31,7 @@ export const resources = [
 		id: "credit-qc-courte",
 		title: "Maîtriser son crédit au Québec - Version abrégée",
 		description:
-			"L'essentiel en 5 minutes pour comprendre, protéger et améliorer votre dossier de crédit chez Equifax et TransUnion[cite: 83].",
+			"L'essentiel en 5 minutes pour comprendre, protéger et améliorer votre dossier de crédit chez Equifax et TransUnion.",
 		fileUrl:
 			"/resources/Guides/Guide gestion du crédit Québec - Version abrégée - Octobre 2026.pdf",
 		featured: true,
@@ -40,7 +40,7 @@ export const resources = [
 		id: "credit-qc-longue",
 		title: "Maîtriser son crédit au Québec - Version détaillée",
 		description:
-			"Guide pratique pour comprendre, protéger et améliorer votre dossier de crédit chez Equifax et TransUnion[cite: 66].",
+			"Guide pratique pour comprendre, protéger et améliorer votre dossier de crédit chez Equifax et TransUnion.",
 		fileUrl:
 			"/resources/Guides/Guide gestion du crédit Québec - Version détaillée - Octobre 2026.pdf",
 		featured: true,
@@ -49,7 +49,7 @@ export const resources = [
 		id: "hypotheque-qc-courte",
 		title: "L'hypothèque au Québec, de A à Z - Version abrégée",
 		description:
-			"L'essentiel pour réussir votre financement immobilier : mise de fonds, qualification, programmes d'aide (CELIAPP, RAP), choix du taux et renouvellement[cite: 26].",
+			"L'essentiel pour réussir votre financement immobilier : mise de fonds, qualification, programmes d'aide (CELIAPP, RAP), choix du taux et renouvellement.",
 		fileUrl: "/resources/Guides/Guide ABC Hypothèque Québec - Version abrégée - Octobre 2026.pdf",
 		featured: true,
 	},
@@ -57,7 +57,7 @@ export const resources = [
 		id: "hypotheque-qc-longue",
 		title: "L'hypothèque au Québec, de A à Z - Version détaillée",
 		description:
-			"Guide complet sur le financement immobilier au Québec : premier achat, immeubles à revenus, stratégies pour travailleurs autonomes, renouvellement et protection[cite: 1].",
+			"Guide complet sur le financement immobilier au Québec : premier achat, immeubles à revenus, stratégies pour travailleurs autonomes, renouvellement et protection.",
 		fileUrl: "/resources/Guides/Guide ABC Hypothèque Québec - Version détaillée - Octobre 2026.pdf",
 		featured: true,
 	},
@@ -65,7 +65,7 @@ export const resources = [
 		id: "assurance-qc-courte",
 		title: "Bien s'assurer au Québec - Version abrégée",
 		description:
-			"Synthèse pratique des notions clés de l'assurance de personnes : comprendre l'assurance vie, maladie grave et invalidité pour protéger vos proches[cite: 56].",
+			"Synthèse pratique des notions clés de l'assurance de personnes : comprendre l'assurance vie, maladie grave et invalidité pour protéger vos proches.",
 		fileUrl:
 			"/resources/Guides/Guide Assurance de personnes Québec - Version abrégée - Octobre 2026.pdf",
 		featured: true,
@@ -74,7 +74,7 @@ export const resources = [
 		id: "assurance-qc-longue",
 		title: "Bien s'assurer au Québec - Version détaillée",
 		description:
-			"Guide approfondi pour structurer vos protections au Québec : analyse des besoins en assurance vie, maladie grave, invalidité, règles successorales et stratégies à chaque étape de vie[cite: 36].",
+			"Guide approfondi pour structurer vos protections au Québec : analyse des besoins en assurance vie, maladie grave, invalidité, règles successorales et stratégies à chaque étape de vie.",
 		fileUrl:
 			"/resources/Guides/Guide Assurance de personnes Québec - Version détaillée - Octobre 2026.pdf",
 		featured: true,
