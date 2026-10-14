@@ -3,6 +3,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import ResourceCard from "../components/ResourceCard.astro";
 import { resources } from "../data/resources.js";
 
+// Définissez l'ordre souhaité des ressources en utilisant leurs identifiants (`id`)
+const orderedIds = [
+	// Autres ressources et outils
+	"assurance",
+	"budget-entreprise",
+	"budget-personnel",
+	"budget-beaute",
+
+	// Guides (octobre 2026)
+	"assurance-qc-courte",
+	"assurance-qc-longue",
+	"credit-qc-courte",
+	"credit-qc-longue",
+	"hypotheque-qc-courte",
+	"hypotheque-qc-longue",
+];
+
+// Trie les ressources selon l'ordre défini dans `orderedIds`
+const orderedResources = [...resources].sort((a, b) => {
+	const indexA = orderedIds.indexOf(a.id);
+	const indexB = orderedIds.indexOf(b.id);
+
+	if (indexA === -1) return 1;
+	if (indexB === -1) return -1;
+
+	return indexA - indexB;
+});
 ---
 
 <BaseLayout
@@ -12,7 +39,7 @@ import { resources } from "../data/resources.js";
 		<h1>Ressources à télécharger</h1>
 		<div class="resources-grid">
 			{
-				resources.map((r) => (
+				orderedResources.map((r) => (
 					<ResourceCard title={r.title} description={r.description} fileUrl={r.fileUrl} />
 				))
 			}
@@ -30,15 +57,13 @@ import { resources } from "../data/resources.js";
 
 		resourceLinks.forEach((link) => {
 			link.addEventListener("click", (e) => {
-				
 				const target = e.currentTarget as HTMLAnchorElement;
 
 				if (!target) return;
 
 				const fileName = target.getAttribute("href") || "unknown";
-				const fileTitle = target.querySelector("h2")?.innerText || fileName;
+				const fileTitle = target.querySelector("h3, h2")?.textContent?.trim() || fileName;
 
-				
 				const globalWindow = window as unknown as Window;
 				if (globalWindow.gtag) {
 					globalWindow.gtag("event", "file_download", {
@@ -52,4 +77,5 @@ import { resources } from "../data/resources.js";
 	};
 
 	trackDownloads();
+	document.addEventListener("astro:page-load", trackDownloads);
 </script>
