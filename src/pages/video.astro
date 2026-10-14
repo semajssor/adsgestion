@@ -15,7 +15,13 @@ const appelExploratoireUrl =
 	"https://bookings.cloud.microsoft/book/ConseilsFortune@conseilsfortune.onmicrosoft.com/s/nWNraLp860KGoUMc6UW5YQ2?ismsaljsauthenabled=true";
 
 // Option A : Choisir précisément par ID
-const selectedIds = ["credit-qc", "assurance"];
+const selectedIds = [
+	"assurance-qc-courte",
+	"assurance-qc-longue",
+	"gestion-credit-qc-courte",
+	"gestion-credit-qc-longue",
+	"hypotheque-qc-courte",
+	"hypotheque-qc-longue",];
 const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
 
 // Option B : Ou prendre seulement celles qui ont featured: true
