@@ -21,8 +21,12 @@ const selectedIds = [
 	"credit-qc-courte",
 	"credit-qc-longue",
 	"hypotheque-qc-courte",
-	"hypotheque-qc-longue",];
-const selectedResources = resources.filter((r) => selectedIds.includes(r.id));
+	"hypotheque-qc-longue",
+];
+// Récupère les ressources dans l'ordre exact du tableau `selectedIds`
+const selectedResources = selectedIds
+	.map((id) => resources.find((r) => r.id === id))
+	.filter((r): r is NonNullable<typeof r> => r !== undefined);
 
 // Option B : Ou prendre seulement celles qui ont featured: true
 // const selectedResources = resources.filter((r) => r.featured);
